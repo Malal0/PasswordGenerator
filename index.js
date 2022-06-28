@@ -26,3 +26,7 @@ function generatePasswords() {
     secondPasswordText.textContent = secondPassword;
     console.log("clicked");
 }
+
+function copyToClipboard() {
+    console.log(`${firstPassword} / ${secondPassword}`)
+}
