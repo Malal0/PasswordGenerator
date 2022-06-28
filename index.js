@@ -7,6 +7,8 @@ let passwordLength = 15;
 
 const firstPasswordText = document.getElementById("first-password");
 const secondPasswordText = document.getElementById("second-password");
+const firstPasswordBtn = document.querySelector("#first-password-btn");
+const secondPasswordBtn = document.querySelector("#second-password-btn");
 
 function random() {
     let output = ""
@@ -24,9 +26,14 @@ function generatePasswords() {
     secondPassword = random();
     firstPasswordText.textContent = firstPassword;
     secondPasswordText.textContent = secondPassword;
-    console.log("clicked");
+    firstPasswordBtn.value = firstPassword;
+    secondPasswordBtn.value = secondPassword;
 }
 
 function copyToClipboard() {
-    console.log(`${firstPassword} / ${secondPassword}`)
+    console.log(this.value);
+    navigator.clipboard.writeText(this.value);
 }
+
+firstPasswordBtn.addEventListener("click", copyToClipboard);
+secondPasswordBtn.addEventListener("click", copyToClipboard);
