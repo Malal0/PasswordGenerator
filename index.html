@@ -12,14 +12,16 @@
 <body>
     <div class="top">
         <h1>Generate a <span class="main-color">random password</span></h1>
-        <p>Never use an insecure password again.</p>
+        <p class="sub-text">Never use an insecure password again.</p>
     </div>
     <div class="mid">
-        <button onclick="generatePasswords()" class="main-color">Generate passwords</button>
+        <button onclick="generatePasswords()" class="main-color-btn">Generate passwords</button>
+        <input id="number-of-characters" type="number" min="1" max="150" value="8">
     </div>
     <div class="passwords">
-        <p id="first-password"></p><button id="first-password-btn" value="first-password">copy</button>
-        <p id="second-password"></p><button id="second-password-btn" value="second-password">copy</button>
+        <p id="first-password"></p>
+        <p id="second-password"></p>
+        <p class="sub-text">click on passwords to copy to clipboard</p>
     </div>
     <script src="index.js"></script>
 </body>

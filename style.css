@@ -5,17 +5,46 @@
     --lightText: #6B7280;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: var(--bg);
-    ;
     color: var(--text);
 }
 
 .passwords p {
     background-color: var(--text);
     color: var(--mainColor);
-    width: fit-content;
+    max-width: fit-content;
+    min-width: 100px;
+    height: 32px;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.main-color {
+    color: var(--mainColor);
+}
+
+.main-color-btn {
+    background-color: var(--mainColor);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 7px;
+}
+
+.sub-text {
+    color: var(--lightText);
+}
+
+.passwords .sub-text {
+    color: var(--lightText);
+    background-color: #00000000;
+    padding: 0;
 }
