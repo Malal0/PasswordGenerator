@@ -1,5 +1,21 @@
+:root {
+    --bg: #ECFDF5;
+    --text: #273549;
+    --mainColor: #10B981;
+    --lightText: #6B7280;
+}
+
 body {
-    background-color: hsla(152, 81%, 96%);
+    background-color: var(--bg);
     ;
-    color: hsl(215, 30%, 22%);
+    color: var(--text);
+}
+
+.passwords p {
+    background-color: var(--text);
+    color: var(--mainColor);
+    width: fit-content;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
