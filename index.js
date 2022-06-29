@@ -7,7 +7,7 @@ const characterLength = document.querySelector("#number-of-characters");
 
 let firstPassword = "";
 let secondPassword = "";
-let passwordLength = 8;
+let passwordLength = characterLength.value;
 
 function random() {
     let output = ""
