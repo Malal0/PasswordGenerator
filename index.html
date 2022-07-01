@@ -16,8 +16,26 @@
     </div>
     <div class="mid">
         <button onclick="generatePasswords()" class="main-color-btn">Generate passwords</button>
-        <label for="number-of-characters" class="sub-text">Number of characters</label>
-        <input id="number-of-characters" type="number" min="1" max="150" value="8">
+        <div>
+            <input id="number-of-characters" type="number" min="1" max="150" value="8">
+            <label for="number-of-characters" class="sub-text">Number of characters</label>
+        </div>
+        <div>
+            <input id="uppercaseCheckBox" type="checkbox" checked="true">
+            <label for="uppercaseCheckBox" class="sub-text">Include Uppercase</label>
+        </div>
+        <div>
+            <input id="lowercaseCheckBox" type="checkbox" checked="true">
+            <label for="lowercaseCheckBox" class="sub-text">Include Lowercase</label>
+        </div>
+        <div>
+            <input id="numbersCheckBox" type="checkbox" checked="true">
+            <label for="numbersCheckBox" class="sub-text">Include Numbers</label>
+        </div>
+        <div>
+            <input id="symbolsCheckBox" type="checkbox" checked="true">
+            <label for="symbolsCheckBox" class="sub-text">Include Symbols</label>
+        </div>
     </div>
     <div class="passwords">
         <label for="first-password">Option 1</label>

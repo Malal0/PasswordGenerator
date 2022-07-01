@@ -13,6 +13,8 @@ const firstPasswordText = document.getElementById("first-password");
 const secondPasswordText = document.getElementById("second-password");
 const characterLength = document.querySelector("#number-of-characters");
 
+const allCheckboxes = document.querySelectorAll("input[type=checkbox]");
+
 let firstPassword = "";
 let secondPassword = "";
 let passwordLength = characterLength.value;
@@ -42,6 +44,28 @@ function copyToClipboard() {
     navigator.clipboard.writeText(this.innerText);
 }
 
+function updateUppercase() {
+    if (allCheckboxes[0].checked) { //  uppercase
+        console.log("checked uppercase")
+        for (let i = 0; i < uppercaseLetters.length; i++) {
+            characters.push(uppercaseLetters[i])
+        }
+    } else if (allCheckboxes[0].checked === false) {
+        console.log("unchecked uppercase")
+        for (let i = 0; i < characters.length; i++) {
+            if (characters[i] === uppercaseLetters[0]) {
+                console.log(characters[i])
+                characters.splice(characters.indexOf(characters[i]), uppercaseLetters.length)
+            } else {
+                i++
+            }
+        }
+    }
+    console.log(characters)
+}
+
 characterLength.addEventListener("change", changeCharacterLength);
 firstPasswordText.addEventListener("click", copyToClipboard);
 secondPasswordText.addEventListener("click", copyToClipboard);
+
+allCheckboxes[0].addEventListener("change", updateUppercase);
