@@ -63,9 +63,7 @@ body {
     color: var(--mainColor);
     max-height: fit-content;
     min-height: 32px;
-    padding: 7px 15px;
     border-radius: 5px;
-    overflow: scroll;
 }
 
 .main-color {
@@ -92,4 +90,6 @@ body {
 
 .options {
     cursor: pointer;
+    padding: 7px 15px;
+    word-break: break-all;
 }
