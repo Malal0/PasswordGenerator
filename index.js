@@ -9,10 +9,10 @@ const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 const symbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?", "/"];
 
+const passwordBtn = document.getElementById("generate-password-btn");
 const firstPasswordText = document.getElementById("first-password");
 const secondPasswordText = document.getElementById("second-password");
 const characterLength = document.querySelector("#number-of-characters");
-
 const allCheckboxes = document.querySelectorAll("input[type=checkbox]");
 
 let firstPassword = "";
@@ -33,10 +33,18 @@ function changeCharacterLength() {
 }
 
 function generatePasswords() {
-    firstPassword = random();
-    secondPassword = random();
-    firstPasswordText.textContent = firstPassword;
-    secondPasswordText.textContent = secondPassword;
+    if (characters.length > 0) {
+        firstPassword = random();
+        secondPassword = random();
+        firstPasswordText.textContent = firstPassword;
+        secondPasswordText.textContent = secondPassword;
+    } else {
+        console.log("please select an option");
+        firstPassword = "";
+        secondPassword = "";
+        firstPasswordText.textContent = firstPassword;
+        secondPasswordText.textContent = secondPassword;
+    }
 }
 
 function copyToClipboard() {
@@ -124,6 +132,7 @@ function updateSymbols() {
     console.log(characters)
 }
 
+passwordBtn.addEventListener("click", generatePasswords);
 characterLength.addEventListener("change", changeCharacterLength);
 firstPasswordText.addEventListener("click", copyToClipboard);
 secondPasswordText.addEventListener("click", copyToClipboard);
