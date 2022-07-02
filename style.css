@@ -76,6 +76,17 @@ body {
     border: none;
     padding: 8px 15px;
     border-radius: 7px;
+    cursor: pointer;
+    width: 300px;
+    margin: auto;
+}
+
+.main-color-btn:hover {
+    transform: scale(.99);
+}
+
+.main-color-btn:active {
+    filter: brightness(.9);
 }
 
 .sub-text {
@@ -92,4 +103,17 @@ body {
     cursor: pointer;
     padding: 7px 15px;
     word-break: break-all;
+}
+
+@media(min-width: 426px) {
+    body {
+        margin: 3em;
+    }
+}
+
+@media(min-width: 768px) {
+    body {
+        margin: 3em auto;
+        width: 700px;
+    }
 }
