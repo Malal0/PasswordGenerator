@@ -105,6 +105,14 @@ body {
     word-break: break-all;
 }
 
+.options:hover {
+    transform: scale(.997);
+}
+
+.options:active {
+    filter: brightness(.9);
+}
+
 @media(min-width: 426px) {
     body {
         margin: 3em;
