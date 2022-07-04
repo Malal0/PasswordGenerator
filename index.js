@@ -33,13 +33,12 @@ function changeCharacterLength() {
 }
 
 function generatePasswords() {
-    if (characters.length > 0) {
+    if (characters.length > 0 || characterLength > 0) {
         firstPassword = random();
         secondPassword = random();
         firstPasswordText.textContent = firstPassword;
         secondPasswordText.textContent = secondPassword;
     } else {
-        console.log("please select an option");
         firstPassword = "";
         secondPassword = "";
         firstPasswordText.textContent = firstPassword;
@@ -48,88 +47,71 @@ function generatePasswords() {
 }
 
 function copyToClipboard() {
-    console.log(this.innerText);
     navigator.clipboard.writeText(this.innerText);
 }
 
 function updateUppercase() {
     if (allCheckboxes[0].checked) { //  uppercase
-        console.log("checked uppercase")
         for (let i = 0; i < uppercaseLetters.length; i++) {
             characters.push(uppercaseLetters[i])
         }
     } else if (allCheckboxes[0].checked === false) {
-        console.log("unchecked uppercase")
         for (let i = 0; i < characters.length; i++) {
             if (characters[i] === uppercaseLetters[0]) {
-                console.log(characters[i])
                 characters.splice(characters.indexOf(characters[i]), uppercaseLetters.length)
             } else {
-                i++
+                continue
             }
         }
     }
-    console.log(characters)
 }
 
 function updateLowercase() {
     if (allCheckboxes[1].checked) { //  lowercase
-        console.log("checked lowercase")
         for (let i = 0; i < lowercaseLetters.length; i++) {
             characters.push(lowercaseLetters[i])
         }
     } else if (allCheckboxes[1].checked === false) {
-        console.log("unchecked lowercase")
         for (let i = 0; i < characters.length; i++) {
             if (characters[i] === lowercaseLetters[0]) {
-                console.log(characters[i])
                 characters.splice(characters.indexOf(characters[i]), lowercaseLetters.length)
             } else {
-                i++
+                continue
             }
         }
     }
-    console.log(characters)
 }
 
 function updateNumbers() {
     if (allCheckboxes[2].checked) { //  numbers
-        console.log("checked numbers")
         for (let i = 0; i < numbers.length; i++) {
             characters.push(numbers[i])
         }
     } else if (allCheckboxes[2].checked === false) {
-        console.log("unchecked numbers")
         for (let i = 0; i < characters.length; i++) {
             if (characters[i] === numbers[0]) {
-                console.log(characters[i])
                 characters.splice(characters.indexOf(characters[i]), numbers.length)
             } else {
-                i++
+                continue
             }
         }
     }
-    console.log(characters)
 }
 
 function updateSymbols() {
     if (allCheckboxes[3].checked) { //  symbols
-        console.log("checked symbols")
         for (let i = 0; i < symbols.length; i++) {
             characters.push(symbols[i])
         }
     } else if (allCheckboxes[3].checked === false) {
-        console.log("unchecked symbols")
         for (let i = 0; i < characters.length; i++) {
             if (characters[i] === symbols[0]) {
-                console.log(characters[i])
                 characters.splice(characters.indexOf(characters[i]), symbols.length)
             } else {
-                i++
+                continue
             }
         }
     }
-    console.log(characters)
 }
 
 passwordBtn.addEventListener("click", generatePasswords);

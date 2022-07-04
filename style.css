@@ -26,6 +26,9 @@ body {
     background-color: var(--bg);
     color: var(--text);
     margin: 16px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 
 .top {
@@ -111,6 +114,7 @@ body {
 
 .options:active {
     filter: brightness(.9);
+    color: var(--bg);
 }
 
 @media(min-width: 426px) {
@@ -122,6 +126,6 @@ body {
 @media(min-width: 768px) {
     body {
         margin: 3em auto;
-        width: 700px;
+        width: 600px;
     }
 }
