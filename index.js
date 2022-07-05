@@ -15,6 +15,8 @@ const secondPasswordText = document.getElementById("second-password");
 const characterLength = document.querySelector("#number-of-characters");
 const allCheckboxes = document.querySelectorAll("input[type=checkbox]");
 const errorLine = document.getElementById("error-line");
+const copyIconOne = document.getElementById("option-one-icon")
+const copyIconTwo = document.getElementById("option-two-icon")
 
 let firstPassword = "";
 let secondPassword = "";
@@ -73,7 +75,19 @@ function copyToClipboard() {
         console.log("empty string was copied")
     } else {
         console.log("copied")
+        if (this.id == "first-password") {
+            copyIconOne.classList.add("bounceFadeIn")
+            setTimeout(() => {
+                copyIconOne.classList.remove("bounceFadeIn")
+            }, 2000)
+        } else {
+            copyIconTwo.classList.add("bounceFadeIn")
+            setTimeout(() => {
+                copyIconTwo.classList.remove("bounceFadeIn")
+            }, 2000)
+        }
     }
+    console.log(this.id)
 };
 
 function updateUppercase() {

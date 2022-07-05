@@ -67,6 +67,11 @@ body {
     max-height: fit-content;
     min-height: 32px;
     border-radius: 5px;
+    margin: 10px 0;
+}
+
+.option-container {
+    position: relative;
 }
 
 .main-color {
@@ -139,6 +144,42 @@ body {
 
     to {
         transform: translateY(0%);
+    }
+}
+
+.copied-icon {
+    height: 20px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.bounceFadeIn {
+    animation: bounceFadeIn 2s 1;
+    opacity: 0;
+}
+
+@keyframes bounceFadeIn {
+    from {
+        top: 40%;
+        opacity: .33;
+    }
+
+    10% {
+        top: -30%;
+        opacity: .66;
+    }
+
+    20% {
+        top: -10%;
+        opacity: 1;
+    }
+
+    to {
+        top: -10%;
+        opacity: 0;
     }
 }
 
