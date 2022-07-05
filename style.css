@@ -117,6 +117,28 @@ body {
     color: var(--bg);
 }
 
+.error {
+    color: red;
+    animation-name: jiggle;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+@keyframes jiggle {
+    from {
+        transform: translateY(50%);
+    }
+
+    50% {
+        transform: translateY(-10%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
 @media(min-width: 426px) {
     body {
         margin: 3em;
