@@ -14,10 +14,15 @@ const firstPasswordText = document.getElementById("first-password");
 const secondPasswordText = document.getElementById("second-password");
 const characterLength = document.querySelector("#number-of-characters");
 const allCheckboxes = document.querySelectorAll("input[type=checkbox]");
+const errorLine = document.getElementById("error-line");
 
 let firstPassword = "";
 let secondPassword = "";
 let passwordLength = characterLength.value;
+
+for (let i = 0; i < allCheckboxes.length; i++) {
+    allCheckboxes[i].checked = true
+}
 
 function random() {
     let output = ""
@@ -30,10 +35,10 @@ function random() {
 
 function changeCharacterLength() {
     passwordLength = this.value;
-}
+};
 
 function generatePasswords() {
-    if (characters.length > 0 || characterLength > 0) {
+    if (characters.length > 0 && passwordLength > 0) {
         firstPassword = random();
         secondPassword = random();
         firstPasswordText.textContent = firstPassword;
@@ -43,12 +48,33 @@ function generatePasswords() {
         secondPassword = "";
         firstPasswordText.textContent = firstPassword;
         secondPasswordText.textContent = secondPassword;
+        if (errorLine.classList.contains("jiggle")) {
+            return
+        } else {
+            errorLine.classList.add("jiggle");
+            setTimeout(() => {
+                errorLine.classList.remove("jiggle")
+            }, 500);
+        }
+        if (errorLine.classList.contains("error")) {
+            return;
+        } else {
+            errorLine.classList.add("error");
+            setTimeout(() => {
+                errorLine.classList.remove("error")
+            }, 3000);
+        }
     }
-}
+};
 
 function copyToClipboard() {
     navigator.clipboard.writeText(this.innerText);
-}
+    if (this.innerText == "") {
+        console.log("empty string was copied")
+    } else {
+        console.log("copied")
+    }
+};
 
 function updateUppercase() {
     if (allCheckboxes[0].checked) { //  uppercase
@@ -64,7 +90,7 @@ function updateUppercase() {
             }
         }
     }
-}
+};
 
 function updateLowercase() {
     if (allCheckboxes[1].checked) { //  lowercase
@@ -80,7 +106,7 @@ function updateLowercase() {
             }
         }
     }
-}
+};
 
 function updateNumbers() {
     if (allCheckboxes[2].checked) { //  numbers
@@ -96,7 +122,7 @@ function updateNumbers() {
             }
         }
     }
-}
+};
 
 function updateSymbols() {
     if (allCheckboxes[3].checked) { //  symbols
@@ -112,7 +138,7 @@ function updateSymbols() {
             }
         }
     }
-}
+};
 
 passwordBtn.addEventListener("click", generatePasswords);
 characterLength.addEventListener("change", changeCharacterLength);

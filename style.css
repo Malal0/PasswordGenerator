@@ -119,6 +119,9 @@ body {
 
 .error {
     color: red;
+}
+
+.jiggle {
     animation-name: jiggle;
     animation-duration: .5s;
     animation-iteration-count: 1;
