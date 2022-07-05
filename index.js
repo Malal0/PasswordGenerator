@@ -72,9 +72,8 @@ function generatePasswords() {
 function copyToClipboard() {
     navigator.clipboard.writeText(this.innerText);
     if (this.innerText == "") {
-        console.log("empty string was copied")
+        return
     } else {
-        console.log("copied")
         if (this.id == "first-password") {
             copyIconOne.classList.add("bounceFadeIn")
             setTimeout(() => {
@@ -87,7 +86,6 @@ function copyToClipboard() {
             }, 2000)
         }
     }
-    console.log(this.id)
 };
 
 function updateUppercase() {
