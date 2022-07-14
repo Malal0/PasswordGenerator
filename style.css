@@ -201,7 +201,17 @@ body {
     z-index: -100;
 }
 
+#bg-img-1 {
+    position: absolute;
+    left: -50%;
+    bottom: 5%;
+}
 
+#bg-img-2 {
+    position: absolute;
+    right: -50%;
+    bottom: 5%;
+}
 
 @media(min-width: 426px) {
     #main-body {
