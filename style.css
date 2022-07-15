@@ -197,19 +197,19 @@ body {
 .bg-image {
     height: 300px;
     aspect-ratio: 1/1;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     z-index: -100;
 }
 
 #bg-img-1 {
     position: absolute;
-    left: -50%;
+    left: -40%;
     bottom: 5%;
 }
 
 #bg-img-2 {
     position: absolute;
-    right: -50%;
+    right: -40%;
     bottom: 5%;
 }
 
@@ -217,11 +217,41 @@ body {
     #main-body {
         margin: 3em;
     }
+
+    #bg-img-1 {
+        position: absolute;
+        left: -20%;
+        bottom: 5%;
+    }
+
+    #bg-img-2 {
+        position: absolute;
+        right: -20%;
+        bottom: 5%;
+    }
 }
 
 @media(min-width: 768px) {
     #main-body {
         margin: 3em auto;
         width: 600px;
+    }
+
+    #bg-img-1 {
+        position: absolute;
+        left: 2%;
+        bottom: 5%;
+    }
+
+    #bg-img-2 {
+        position: absolute;
+        right: 2%;
+        bottom: 5%;
+    }
+}
+
+@media(min-width: 1023px) {
+    .bg-image {
+        height: 400px;
     }
 }
