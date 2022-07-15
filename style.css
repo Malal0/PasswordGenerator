@@ -11,7 +11,7 @@
 :root {
     --bg: #ECFDF5;
     --text: #273549;
-    --mainColor: #10B981;
+    --mainColor: hsl(160, 84%, 39%);
     --lightText: #6B7280;
 }
 
@@ -126,7 +126,7 @@ body {
 }
 
 .error {
-    color: red;
+    color: #ff0000;
 }
 
 .jiggle {
@@ -199,6 +199,8 @@ body {
     aspect-ratio: 1/1;
     /* border: 1px solid black; */
     z-index: -100;
+    object-fit: contain;
+    filter: hue-rotate(160deg) saturate(94%) brightness(1.50) opacity(.3);
 }
 
 #bg-img-1 {
@@ -254,4 +256,9 @@ body {
     .bg-image {
         height: 400px;
     }
+}
+
+path {
+    stroke-width: 4px;
+    stroke: hsl(152, 81%, 96%);
 }
