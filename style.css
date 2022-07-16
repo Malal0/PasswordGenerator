@@ -241,6 +241,10 @@ body {
         width: 600px;
     }
 
+    .bg-image {
+        height: 400px;
+    }
+
     #bg-img-1 {
         position: absolute;
         left: 2%;
@@ -256,7 +260,7 @@ body {
 
 @media(min-width: 1023px) {
     .bg-image {
-        height: 400px;
+        height: 500px;
     }
 }
 
