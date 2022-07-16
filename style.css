@@ -9,9 +9,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg: #ECFDF5;
+    --bg: #ecfdf5;
     --text: #273549;
-    --mainColor: hsl(160, 84%, 39%);
+    --mainColor: #10b77f;
     --lightText: #6B7280;
 }
 
@@ -24,6 +24,8 @@
 
 body {
     background-color: var(--bg);
+    height: 100vh;
+    overflow: hidden;
 }
 
 #main-body {
@@ -205,13 +207,13 @@ body {
 
 #bg-img-1 {
     position: absolute;
-    left: -40%;
+    left: -30%;
     bottom: 5%;
 }
 
 #bg-img-2 {
     position: absolute;
-    right: -40%;
+    right: -30%;
     bottom: 5%;
 }
 
