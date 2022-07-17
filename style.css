@@ -24,16 +24,12 @@
 
 body {
     background-color: var(--bg);
-    height: 100vh;
     overflow-x: hidden;
 }
 
 #main-body {
     color: var(--text);
     margin: 16px;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
 }
 
 .top {
