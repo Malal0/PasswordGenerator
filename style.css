@@ -25,7 +25,7 @@
 body {
     background-color: var(--bg);
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 #main-body {
@@ -188,50 +188,69 @@ body {
     }
 }
 
-.bg-image-container {
+.bg-images-container {
     height: 100vh;
     width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: -100;
 }
 
 .bg-image {
     height: 300px;
     aspect-ratio: 1/1;
     /* border: 1px solid black; */
-    z-index: -100;
+    z-index: inherit;
     object-fit: contain;
-    filter: hue-rotate(160deg) saturate(94%) brightness(1.50) opacity(.3);
+    filter: hue-rotate(160deg) saturate(94%) brightness(1.50) opacity(.1);
 }
 
 #bg-img-1 {
     position: absolute;
-    left: -30%;
-    bottom: 5%;
+    top: 432px;
+    left: -92px;
 }
 
 #bg-img-2 {
     position: absolute;
-    right: -30%;
-    bottom: 5%;
+    top: 102px;
+    right: -128px;
 }
 
-@media(min-width: 426px) {
+@media(min-width: 375px) {
+    .bg-image {
+        filter: hue-rotate(160deg) saturate(94%) brightness(1.50) opacity(.3);
+    }
+
+    #bg-img-1 {
+        top: 432px;
+        left: -92px;
+    }
+
+    #bg-img-2 {
+        top: 102px;
+        right: -128px;
+    }
+}
+
+@media(min-width: 425px) {
     #main-body {
         margin: 3em;
     }
 
+    .bg-image {
+        height: 325px;
+    }
+
     #bg-img-1 {
-        position: absolute;
-        left: -20%;
-        bottom: 5%;
+        top: 490px;
+        left: -115px;
     }
 
     #bg-img-2 {
-        position: absolute;
-        right: -20%;
-        bottom: 5%;
+        top: 142px;
+        right: -112px;
     }
 }
 
@@ -246,15 +265,13 @@ body {
     }
 
     #bg-img-1 {
-        position: absolute;
-        left: 2%;
-        bottom: 5%;
+        top: 615px;
+        left: -82px;
     }
 
     #bg-img-2 {
-        position: absolute;
-        right: 2%;
-        bottom: 5%;
+        top: 615px;
+        right: -98px;
     }
 }
 
@@ -262,9 +279,30 @@ body {
     .bg-image {
         height: 500px;
     }
+
+    #bg-img-1 {
+        top: 376px;
+        left: -82px;
+    }
+
+    #bg-img-2 {
+        top: 376px;
+        right: -98px;
+    }
 }
 
-path {
-    stroke-width: 4px;
-    stroke: hsl(152, 81%, 96%);
+@media(min-width: 1440px) {
+    .bg-image {
+        height: 650px;
+    }
+
+    #bg-img-1 {
+        top: 200px;
+        left: -82px;
+    }
+
+    #bg-img-2 {
+        top: 200px;
+        right: -82px;
+    }
 }
